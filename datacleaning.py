@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-data = pd.read_csv('../input_data_train.csv')
+data = pd.read_csv('../input_data_pred.csv')
 
 # We do not care of the type of the event since we have the data, we only care
 # if it's special or not
@@ -34,10 +34,11 @@ print('Transforming: Getting location dummies')
 # data = pd.get_dummies(data, prefix='location', columns=['location'])
 
 # We may need to train 2 models, one with temperatures and one without
-print('Transforming: Separating info without temperature')
-data_with_temp = data[data['temp_mean'].notna()]
-data_no_temp = data[data['temp_mean'].isna()]
+# print('Transforming: Separating info without temperature')
+# data_with_temp = data[data['temp_mean'].notna()]
+# data_no_temp = data[data['temp_mean'].isna()]
 
 print('Transforming: Saving information')
-data_with_temp.to_csv(path_or_buf='../data_with_temp_processed.csv')
-data_no_temp.to_csv(path_or_buf='../data_no_temp_processed.csv')
+data.to_csv(path_or_buf='../data_to_predict_processed.csv')
+# data_with_temp.to_csv(path_or_buf='../data_with_temp_processed.csv')
+# data_no_temp.to_csv(path_or_buf='../data_no_temp_processed.csv')
