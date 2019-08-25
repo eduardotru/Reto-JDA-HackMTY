@@ -1,0 +1,9 @@
+.row .col-xs-6{
+  height: 500px;
+  background-color: black;
+  color: white;
+}
+
+.btn-enviar {
+  margin-top: 30px;
+}
